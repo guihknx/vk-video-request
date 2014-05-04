@@ -1,0 +1,27 @@
+{
+  "name": "vk-video-request",
+  "version": "0.0.0",
+  "description": "Grab video data url form vk.com site",
+  "main": "index.js",
+  "scripts": {
+    "test": "vkiller --url"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/guihknx/vk-video-request.git"
+  },
+  "author": "Guilherme Henrique <guih@hotmail.com.br> (http://guih.us/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/guihknx/vk-video-request/issues"
+  },
+  "homepage": "https://github.com/guihknx/vk-video-request",
+  "devDependencies": {
+    "cheerio": "^0.15.0",
+    "colors": "^0.6.2",
+    "progress": "^1.1.5",
+    "prompt": "^0.2.12",
+    "read": "^1.0.5",
+    "request": "^2.34.0"
+  }
+}
