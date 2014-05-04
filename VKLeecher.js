@@ -35,8 +35,6 @@
     };
     VKLeecher.prototype.VKDownload = function(i, html){
       var that = this;
-      var urlPattern = /^(https?:\/\/)([\da-z\.-]+).\.([a-z\.]{2,10})([\/\w\.-]*)*\/?$/;
-     // console.log(this.defaults.urls[i])
       this.fetchHtml(this.defaults.urls[i],function(data){
         if(data){
           var dom = cheerio.load(data);
@@ -57,6 +55,9 @@
     VKLeecher.prototype.download = function(url, dest, exists){
       console.log('Fetching data form(Please wait): '+url.split('/')[2])
       var file = fs.createWriteStream(dest);
+      this.SCDownload(url, function(data){
+      //  console.log(JSON.parse(data));
+      });
       var request = http.get(url, function(response) {
         var len = parseInt(response.headers['content-length'], 10);
         var body = "";
@@ -84,6 +85,21 @@
         });
         response.pipe(file);
       });
+    };
+    VKLeecher.prototype.SCDownload = function(url, callback){
+     // console.log(url)
+      var y = {};
+      options = {
+        uri: url,
+        timeout: 2000,
+        followAllRedirects: true
+      };
+
+      request( options, function(error, response, body) {
+       callback(body);
+       // console.log(y)
+      });
+     // console.log(y)
     };
     VKLeecher.prototype.checkDir = function(url, dest, cb) {
       var that = this;
