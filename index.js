@@ -1,7 +1,7 @@
 var VKL = require('./VKLeecher');
 
 var instance = new VKL({
-	urls : ['http://VK_VIDEO_URL'],
+	urls : ['http://vk.com/video_ext.php?oid=28695199&id=161337654&hash=b5382d2e90fa1cea&hd=1'],
 	tags: ['script']
 });
 
